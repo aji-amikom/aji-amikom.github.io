@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="RootApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- angular -->
+    <script src="asset/plugins/angularjs/angular.min.js"></script>
+
+    <!-- jquery -->
+    <script src="asset/plugins/jquery/jquery-3.3.1.js"></script>
+
+    <!-- app -->
+    <link rel="stylesheet" href="asset/css/common.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+
+    <!-- bulma -->
+    <link rel="stylesheet" href="asset/css/bulma.css">
+    <script defer src="asset/js/all.js"></script>
+
+    <!-- spacing -->
+    <link rel="stylesheet" href="asset/plugins/css-spacing/css-spacing.css">
+
+    <title>E-Learning | Login</title>
+</head>
+
+<div ng-include="'navbar.html'"></div>
+
+<body>
+  
+<section class="hero is-info is-img is-bold is-medium mtx" id="login-back">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+            <p class="title is-4 has-text-black">
+                Sign in to your account
+            </p>
+            <p class="subtitle is-6 has-text-dark">
+                Your student account is your portal to all things E-Learning: <br>
+                your classroom, projects, forums, career resources, and more!
+            </p>
+        </h1>
+      </div>
+    </div>
+</section>
+
+<div class="container" ng-controller="loginController">
+    <div class="columns is-centered is-marginless">
+        <div class="column is-9">
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="box">
+                            <div>
+                                <p class="title is-4 has-text-black is-marginless">
+                                    Sign in
+                                </p> 
+                                <hr class="dropdown-divider">  
+                                <form action="." method="post" name="login">
+                                    <div class="field">
+                                        <p class="control has-icons-left has-icons-right">
+                                            <input class="input {{ cssEmail }}" type="email" placeholder="Email" id="email" ng-keypress="validateEmail()" required>
+                                            <span class="icon is-small is-left">
+                                            <i class="fas fa-envelope"></i>
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="field">
+                                        <p class="control has-icons-left">
+                                            <input class="input {{ cssPassword }}" type="password" ng-model="password" placeholder="Password" id="password" required>
+                                            <span ng-show="passwordNotif">Password Invalid</span>
+                                            <span class="icon is-small is-left">
+                                            <i class="fas fa-lock"></i>
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="field">
+                                      <p class="control">
+                                          <label class="checkbox">
+                                              <input type="checkbox">
+                                              Remember me
+                                            </label>
+                                      </p>
+                                    </div>
+                                    <div class="field">
+                                        <p class="control">
+                                            <input type="submit" value="Sign In" class="button is-success login-button" ng-disabled="submitNotif">
+                                        </p>
+                                    </div>
+                                </form>
+
+                                <div class="columns is-centered">
+                                    <div class="column is-narrow mts">
+                                        <a>Forgot your password ?</a>
+                                    </div>
+                                </div>                                
+
+                                <hr class="dropdown-divider">
+                                <div class="columns is-centered">
+                                    <div class="column is-narrow">
+                                        <p>or sign in with one of these services</p>
+                                    </div>
+                                </div>
+                                <div class="buttons is-centered">
+                                    <a href="" class="button is-info is-narrow">Facebook</a>
+                                    <a href="" class="button is-danger is-narrow">Google</a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="columns is-centered is-marginless">
+                        <div class="column is-narrow">
+                            <p>No account? <a href="register.html">Create One</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-include="'footer.html'"></div>
+
+<!-- app -->
+<script src="asset/js/app.js"></script>
+
+<!-- ng-main-controller -->
+<script src="asset/plugins/angularjs/controllers/app.js"></script>
+</body>
+
+
+</html>
