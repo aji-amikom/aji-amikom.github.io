@@ -26,12 +26,13 @@
     <!-- <link rel="stylesheet" href="asset/plugins/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="asset/plugins/fontawesome/css/fontawesome.css"> -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="asset/img/logo/favicon.png"/>
 
 
-    <title>E-Learning | Learn AngularJs</title>
+    <title>Course | Udemam</title>
 </head>
 
-<div ng-include="'navbar.html'"></div>
+<div ng-include="'view/navbar-login.html'"></div>
 
 <body ng-controller="detailCourse">
 
@@ -39,7 +40,7 @@
     <nav class="breadcrumb mtxl mlm" aria-label="breadcrumbs">
     <ul>
         <li><a href="index.html">Courses</a></li>
-        <li><a href="materi-list.html">Details</a></li>
+        <li><a href="course.html">Details</a></li>
         <li class="is-active"><a href="#" aria-current="page"> {{ courses.name }} </a></li>
     </ul>
     </nav>
@@ -123,7 +124,27 @@
             </div>
 
             <!-- komentar -->
-            <article class="media">
+            <div id="disqus_thread"></div>
+            <script>
+
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            
+            var disqus_config = function () {
+            this.page.url = 'http://aji-amikom.github.io';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = 'detail-page'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+           
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://aji-amikom.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <!-- <article class="media">
                     <figure class="media-left">
                       <p class="image is-64x64">
                         <img src="https://bulma.io/images/placeholders/128x128.png">
@@ -192,7 +213,7 @@
                         </p>
                         </div>
                     </div>
-                    </article>
+                    </article> -->
         </div>
         <div class="column is-3">
             <!-- button -->
@@ -237,7 +258,7 @@
     </div>
 </div>
 
-<div ng-include="'footer.html'"></div>
+<div ng-include="'view/footer.html'"></div>
 
 <!-- app -->
 <script src="asset/js/app.js"></script>

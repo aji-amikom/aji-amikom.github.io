@@ -21,11 +21,12 @@
 
     <!-- spacing -->
     <link rel="stylesheet" href="asset/plugins/css-spacing/css-spacing.css">
+    <link rel="shortcut icon" href="asset/img/logo/favicon.png"/>
 
-    <title>E-Learning | Login</title>
+    <title>Login | Udemam</title>
 </head>
 
-<div ng-include="'navbar.html'"></div>
+<div ng-include="'view/navbar.html'"></div>
 
 <body>
   
@@ -56,22 +57,23 @@
                                     Sign in
                                 </p> 
                                 <hr class="dropdown-divider">  
-                                <form action="." method="post" name="login">
+                                <form action="#" method="post" name="login">
                                     <div class="field">
                                         <p class="control has-icons-left has-icons-right">
-                                            <input class="input {{ cssEmail }}" type="email" placeholder="Email" id="email" ng-keypress="validateEmail()" required>
+                                            <input class="input {{ cssEmail }}" type="email" ng-model="email" placeholder="Email" id="email" ng-keypress="validateEmail()" name="email" required>
                                             <span class="icon is-small is-left">
-                                            <i class="fas fa-envelope"></i>
+                                                <i class="fas fa-envelope"></i>
                                             </span>
+                                            <p class="help is-danger" ng-show="emailInvalid">email is invalid</p>
                                         </p>
                                     </div>
                                     <div class="field">
                                         <p class="control has-icons-left">
                                             <input class="input {{ cssPassword }}" type="password" ng-model="password" placeholder="Password" id="password" required>
-                                            <span ng-show="passwordNotif">Password Invalid</span>
                                             <span class="icon is-small is-left">
                                             <i class="fas fa-lock"></i>
                                             </span>
+                                            <p class="help is-danger" ng-show="passwordInvalid">password invalid less than 6 characters</p>
                                         </p>
                                     </div>
                                     <div class="field">
@@ -118,7 +120,7 @@
     </div>
 </div>
 
-<div ng-include="'footer.html'"></div>
+<div ng-include="'view/footer.html'"></div>
 
 <!-- app -->
 <script src="asset/js/app.js"></script>

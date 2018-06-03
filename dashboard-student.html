@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html ng-app="RootApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dashboard | Udemam</title>
+	<!-- angular -->
+	<script src="asset/plugins/angularjs/angular.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="asset/css/bulma.css">
+	<link rel="stylesheet" href="asset/plugins/fontawesome/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="asset/plugins/css-spacing/css-spacing.css">
+	<link rel="stylesheet" type="text/css" href="asset/css/style.css">
+	<link rel="stylesheet" type="text/css" href="custom.css">
+  <link rel="shortcut icon" href="asset/img/logo/favicon.png"/>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+         ['Month', 'Sains', 'Chemistry', 'Technology', 'Mathematics', 'Physics', 'Average'],
+         ['Jan',  2,      2,        1,             1,         1,      1.4],
+         ['Feb',  2,      1,        1,             2,         2,      1.5],
+         ['Mar',  2,      1,        2,             2,         1,      1.55],
+         ['Apr',  1,      1,        1,             1,         2,      1.375],
+         ['May',  2,      1,        1,             2,         2,      1.4875],
+         ['Jun',  1,      2,        1,             1,         1,      1.34375]
+      ]);
+
+    var options = {
+      vAxis: {title: 'Course (Category)'},
+      hAxis: {title: 'Month'},
+      seriesType: 'bars',
+      series: {5: {type: 'line'}}
+    };
+
+    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+    </script>
+</head>
+<body>
+
+<!-- Header -->
+<section class="hero is-medium is-light background-student">
+	<div class="hero-head">
+		<div ng-include="'view/navbar-login.html'"></div>
+	</div>
+  <div class="hero-body">
+    <div class="container">
+    	<h1 class="title has-text-centered pbl">
+    		PROFIL HARISH SETYO HUDNANTO
+    	</h1>
+    	<div class="columns">
+    		<div class="column">
+    			<p class="image is-128x128 is-image-centered">
+				     <img class="is-rounded" src="fotoharish.jpg">
+					 </p>
+    		</div>
+    		<div class="column has-text-centered">	
+    			<p class="title is-4">@harishsetyo</p>
+    			<p class="title is-4">Condong Catur, Yogyakarta</p>
+    		</div>
+    		<div class="column has-text-centered">
+    			<a href="#"><i class="fab fa-facebook has-text-dark fa-lg fa-2x"></i></a>
+		  		<a href="#"><i class="fab fa-twitter-square has-text-dark fa-lg fa-2x"></i></a>
+		  		<p class="title is-4">Student at University of Amikom Yogyakarta</p>
+    		</div>
+    	</div>
+    	<div class="columns">
+    		<div class="column has-text-centered">
+    			<p class="title is-4">5 COURSES IN PROGRESS</p>
+    		</div>
+    		<div class="column has-text-centered">	
+    			<p class="title is-4">9 COURSES FINISH</p>
+    		</div>
+    		<div class="column has-text-centered">
+    			<P class="title is-4">1000 EXPERIENCES</P>
+    		</div>
+    	</div>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
+      <div class="container">
+        <ul>
+          <li class="is-active"><a >Profil</a></li>
+          <li><a href="dashboard-student-bookmarks.html">Bookmark</a></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>
+<!-- Profil -->
+<div class="container">
+	<section class="ptxl pbxl">
+		<h1 class="title has-text-centered">STUDENT DASHBOARD REVIEW</h1>
+	</section>
+	<section>
+		<div class="card">
+		  <header class="card-header">
+		    <p class="card-header-title">
+		      Note
+		    </p>
+		    <a href="#" class="card-header-icon" aria-label="more options">
+		      <span class="icon">
+		        <i class="fas fa-angle-down" aria-hidden="true"></i>
+		      </span>
+		    </a>
+		  </header>
+		  <div class="card-content">
+		    <div class="content">
+		      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		      <br>
+		      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+		    </div>
+		  </div>
+		  <footer class="card-footer">
+		    <a href="#" class="card-footer-item has-text-white">Save</a>
+		    <a href="#" class="card-footer-item has-text-white">Edit</a>
+		  </footer>
+		</div>
+	</section>
+	<section>
+		<h1 class="title ptxl has-text-centered">MONTHLY MONITORING STATUS</h1>
+		<div id="chart_div" style="width: 100%; height: 500px;"></div>
+	</section>
+	
+
+</div>
+
+<!-- Footer -->
+<div ng-include="'view/footer.html'"></div>
+
+<!-- ng-main-controller -->
+<script src="asset/plugins/angularjs/controllers/app.js"></script>
+<script type="text/javascript" src="asset/js/main.js"></script>
+</body>
+</html>
