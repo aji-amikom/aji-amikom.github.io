@@ -11,13 +11,13 @@
     <!-- jquery -->
     <script src="asset/plugins/jquery/jquery-3.3.1.js"></script>
 
-    <!-- app -->
-    <link rel="stylesheet" href="asset/css/common.css">
-    <link rel="stylesheet" href="asset/css/style.css">
-
     <!-- bulma -->
     <link rel="stylesheet" href="asset/css/bulma.css">
     <script defer src="asset/js/all.js"></script>
+
+    <!-- app -->
+    <link rel="stylesheet" href="asset/css/common.css">
+    <link rel="stylesheet" href="asset/css/style.css">
 
     <!-- spacing -->
     <link rel="stylesheet" href="asset/plugins/css-spacing/css-spacing.css">
@@ -77,8 +77,12 @@
     <div class="columns">
         <div class="content column is-9 mlm">
             <!-- diskripsi kursus -->
-                <h1>{{ courses.name }}</h1>
-                <p>{{ courses.description }}</p>
+                
+            <div class="columns">
+                <h1 class="column is-10">{{ courses.name }}</h1>
+                <a href="#" class="column prl" style="text-align:  right;">Download</a>
+            </div>
+            <p>{{ courses.description }}</p>
             <!-- <hr class="dropdown-divider"> -->
             <!-- profil guru -->
             <article class="media"></article>
